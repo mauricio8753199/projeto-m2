@@ -104,8 +104,38 @@ header .content ul li a:hover svg{
     font-weight: 600;
     color: var(--primary);
     font-family: "Playfair";
+    text-align: center;
 }
 
 .hero .content h1 span{
+    color: var(--gold);
+}
+.hero .content .description{
+    color: var(--gray);
+    width: 500px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin: auto;
+    margin-top: 12px;
+}
+
+.hero .content button{
+    margin-top: 22px;
+    width: 230px;
+    margin: 22px auto;
+    padding: 19px 32px;
+    border-radius: 12px;
+    background-color: var(--gold);
+    color: var(--secondary);
+    border: 1px solid var(--gold);
+    font-size: 24px;
+    font-family: "Playfair";
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.hero .content button:hover{
+    background-color: var(--secondary);
     color: var(--gold);
 }
