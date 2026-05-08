@@ -27,3 +27,85 @@ html{
     font-size: 16px;
     font-family: "Roboto", sans-serif;
 }
+
+header{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--secondary);
+}
+header .content{
+    width: 100%;
+    max-width: 1224px;
+    padding: 0 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .content .logo{
+    object-fit: contain;
+    width: 80px;
+}
+
+header .content ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 1rem;
+}
+header .content ul li a{
+    font-family: "Playfair";
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+header .content ul li:first-child a{
+    color: var(--gold); 
+}
+
+header .content ul li a:hover{
+    color: var(--gold);
+}
+header .content ul li a svg{
+    fill: var(--primary);
+}
+header .content ul li a:hover svg{
+    fill: var(--gold) !important;
+}
+
+.hero{
+    margin-top: 80px;
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: url("./hero-index.png") no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .content{
+    width: 100%;
+    max-width: 1224px;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero .content h1{
+    font-size: 96px;
+    font-weight: 600;
+    color: var(--primary);
+    font-family: "Playfair";
+}
+
+.hero .content h1 span{
+    color: var(--gold);
+}
