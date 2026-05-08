@@ -10,6 +10,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 :root{
@@ -26,6 +27,7 @@ html{
     height: 100vh;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
+    overflow-y: auto;
 }
 
 header{
@@ -91,12 +93,22 @@ header .content ul li a:hover svg{
     justify-content: center;
 }
 
+@keyframes initHero{
+    0%{
+        margin-top: -150%;
+    }
+    100%{
+        margin-top: 0;
+    }
+}
+
 .hero .content{
     width: 100%;
     max-width: 1224px;
     padding: 0 12px;
     display: flex;
     flex-direction: column;
+    animation: initHero 1s ease-in-out;
 }
 
 .hero .content h1{
@@ -120,7 +132,7 @@ header .content ul li a:hover svg{
     margin-top: 12px;
 }
 
-.hero .content button{
+.hero .content a{
     margin-top: 22px;
     width: 230px;
     margin: 22px auto;
@@ -133,9 +145,71 @@ header .content ul li a:hover svg{
     font-family: "Playfair";
     transition: 300ms;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
 }
 
-.hero .content button:hover{
+.hero .content a:hover{
     background-color: var(--secondary);
     color: var(--gold);
+}
+
+.about-us{
+    max-width: 100vw;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    padding: 64px 0;
+}
+.about-us .content{
+    width: 1224px;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.about-us .content h1{
+    font-family: "Playfair";
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--secondary);
+    text-align: center;
+}
+
+.about-us .content h1 span{
+    color: var(--gold);
+}
+
+.about-us .content .wrapper{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.about-us .content .wrapper .card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 32px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.about-us .content .wrapper .card img{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.about-us .content .wrapper .card .title{
+   font-family: "Playfair";
+   font-size: 32px; 
+   font-weight: 900;
+   color: var(--secondary);
+}
+
+.about-us .content .wrapper .card .description{
+    font-size: 16px;
+    color: var(--gray);
 }
