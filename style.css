@@ -194,6 +194,7 @@ header .content ul li a:hover svg{
     padding: 32px;
     background-color: #fff;
     border-radius: 12px;
+    width: 350px;
 }
 
 .about-us .content .wrapper .card img{
@@ -212,4 +213,35 @@ header .content ul li a:hover svg{
 .about-us .content .wrapper .card .description{
     font-size: 16px;
     color: var(--gray);
+}
+
+.location{
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 64px 0;
+}
+
+.location .content{
+    width: 1224px;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.location .content h1{
+    font-family: "Playfair";
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--secondary);
+    text-align: center;
+}
+
+.location .content h1 span{
+    color: var(--gold);
+}
+
+.location .content .wrapper{
+    border-radius: 12px;
 }
