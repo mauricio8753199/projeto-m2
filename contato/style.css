@@ -21,6 +21,56 @@
     /* Para utilizar variaveis, substitua o valor da cor para var. Exemplo: color: var(--gold) */
 }
 
+h1{
+    font-family: "Playfair";
+    text-align: center;
+    font-size: 96px;
+}
+h1 span{
+    color: var(--gold);
+}
+
+p{
+    font-size: 20px;    
+    color: var(--primary);
+    font-family: "Roboto";
+    color: var(--gray);
+}
+
+.hero{
+    background-color: var(--secondary);
+    background-image: url('herobg.jpg');
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: var(--primary);
+    padding: 300px 20px;
+}
+
+.botao{
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: var(--gold);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: "Playfair";
+    cursor: pointer;
+}
+
+p{
+    text-align: center;
+}
+
+.canais{
+    background-color: var(--primary);
+    background-image: url('canais.jpg');
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    padding: 300px 20px;
+}
+
 html{
     width: 100vw;
     height: 100vh;
