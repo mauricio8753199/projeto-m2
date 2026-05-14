@@ -91,6 +91,14 @@ header .content ul li a:hover svg {
         margin-top: 0;
     }
 }
+@keyframes product{
+    0%{
+        filter: opacity(0.3);
+    }
+    100%{
+        filter: opacity(1);
+    }
+}
 
 #produtos-destaques {
   display: flex;
@@ -246,9 +254,17 @@ header .content ul li a:hover svg {
   fill: #000;
 }
 .item .favoritar:hover {
-  background-color: #000;
+  background-color: #ff2929;
 }
 .item .favoritar:hover svg {
+  fill: #d3d0d0;
+}
+
+.item .favoritar.active {
+  background-color: #ff2929;
+}
+
+.item .favoritar.active svg {
   fill: #d3d0d0;
 }
 
