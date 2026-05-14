@@ -10,6 +10,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 :root{
@@ -26,4 +27,334 @@ html{
     height: 100vh;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
+    overflow-y: auto;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--secondary);
+}
+header .content{
+    width: 100%;
+    max-width: 1224px;
+    padding: 0 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .content .logo{
+    object-fit: contain;
+    width: 80px;
+}
+
+header .content ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 1rem;
+}
+header .content ul li a{
+    font-family: "Playfair";
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+header .content ul li:first-child a{
+    color: var(--gold); 
+}
+
+header .content ul li a:hover{
+    color: var(--gold);
+}
+header .content ul li a svg{
+    fill: var(--primary);
+}
+header .content ul li a:hover svg{
+    fill: var(--gold) !important;
+}
+
+.hero{
+    margin-top: 80px;
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: url("./hero-index.png") no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes initHero{
+    0%{
+        margin-top: -150%;
+    }
+    100%{
+        margin-top: 0;
+    }
+}
+
+.hero .content{
+    width: 100%;
+    max-width: 1224px;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    animation: initHero 1s ease-in-out;
+}
+
+.hero .content h1{
+    font-size: 96px;
+    font-weight: 600;
+    color: var(--primary);
+    font-family: "Playfair";
+    text-align: center;
+}
+
+.hero .content h1 span{
+    color: var(--gold);
+}
+.hero .content .description{
+    color: var(--gray);
+    width: 500px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin: auto;
+    margin-top: 12px;
+}
+
+.hero .content a{
+    margin-top: 22px;
+    width: 230px;
+    margin: 22px auto;
+    padding: 19px 32px;
+    border-radius: 12px;
+    background-color: var(--gold);
+    color: var(--secondary);
+    border: 1px solid var(--gold);
+    font-size: 24px;
+    font-family: "Playfair";
+    transition: 300ms;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.hero .content a:hover{
+    background-color: var(--secondary);
+    color: var(--gold);
+}
+
+.about-us{
+    max-width: 100vw;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    padding: 64px 0;
+}
+.about-us .content{
+    width: 1224px;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.about-us .content h1{
+    font-family: "Playfair";
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--secondary);
+    text-align: center;
+}
+
+.about-us .content h1 span{
+    color: var(--gold);
+}
+
+.about-us .content .wrapper{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.about-us .content .wrapper .card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 32px;
+    background-color: #fff;
+    border-radius: 12px;
+    width: 350px;
+}
+
+.about-us .content .wrapper .card img{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.about-us .content .wrapper .card .title{
+   font-family: "Playfair";
+   font-size: 32px; 
+   font-weight: 900;
+   color: var(--secondary);
+}
+
+.about-us .content .wrapper .card .description{
+    font-size: 16px;
+    color: var(--gray);
+}
+
+.location{
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 64px 0;
+}
+
+.location .content{
+    width: 1224px;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.location .content h1{
+    font-family: "Playfair";
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--secondary);
+    text-align: center;
+}
+
+.location .content h1 span{
+    color: var(--gold);
+}
+
+.location .content .wrapper{
+    border-radius: 12px;
+}
+
+footer{
+    width: 100vw;
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 64px 0;
+}
+
+footer .content{
+    width: 1224px;
+    padding: 0 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+footer .content .wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 26px 0px 40px 0px;
+}
+
+footer .content #w1 img{
+    width: 80px;
+    object-fit: contain;
+}
+
+footer .content #w1 .description{
+    color: var(--gray);
+    font-size: 14;
+}
+
+footer .content #w1 .socials{
+    display: flex;
+    gap: 12px;
+}
+
+footer .content #w1 .socials a{
+    width: 42px;
+    height: 42px;
+    border-radius: 60px;
+    background-color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms;
+    border: 1px solid var(--gold);
+    padding: 2px;
+}
+
+footer .content #w1 .socials a svg{
+    fill: var(--secondary)
+}
+
+footer .content #w1 .socials a:hover{
+    background-color: var(--secondary);
+}
+
+footer .content #w1 .socials a:hover svg{
+    fill: var(--gold)
+}
+
+footer .content #w2 .title, footer .content #w3 .title{
+    font-family: "Playfair";
+    font-size: 20px;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+footer .content #w2 ul, footer .content #w3 ul{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+footer .content #w2 li a{
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 16px;
+    font-weight: 600;
+    transition: 300ms;
+}
+
+footer .content #w3 li a{
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 16px;
+    font-weight: 400;
+    transition: 300ms;
+}
+
+footer .content #w2 li a:hover, footer .content #w3 li a:hover{
+    color: var(--gold);
+}
+
+footer .line{
+    display: flex;
+    width: 1200px;
+    margin: auto;
+    height: 1px;
+    background-color: var(--gray);
+    border-radius: 16px;
+}
+
+footer .coopyright{
+    margin-top: 10px;
+    color: var(--gray);
+    font-size: 16px;
 }
