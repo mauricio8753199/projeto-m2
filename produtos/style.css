@@ -32,6 +32,58 @@ body{
     background-color: var(--primary);
 }
 
+header{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--secondary);
+    z-index: 10;
+}
+header .content{
+    width: 100%;
+    max-width: 1224px;
+    padding: 0 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .content .logo{
+    object-fit: contain;
+    width: 80px;
+}
+
+header .content ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 1rem;
+}
+header .content ul li a{
+    font-family: "Playfair";
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+header .content ul li #atual{
+    color: var(--gold);
+}
+
+header .content ul li a:hover{
+    color: var(--gold);
+}
+header .content ul li a svg{
+    fill: var(--primary);
+}
+header .content ul li a:hover svg{
+    fill: var(--gold) !important;
+}
 
 #produtos-destaques{
     display: flex;
@@ -107,4 +159,67 @@ body{
     font-size: 16px;
     line-height: 100%;
     letter-spacing: 0%;
+}
+
+.item .item-opcoes{
+    padding-top: 10px;
+    padding-right: 12px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item .item-opcoes .preco{
+    color: var(--gold);
+    font-family: "Roboto";
+    font-weight: 400;
+    font-style: regular;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.item .item-opcoes .carrinho{
+    background-color: var(--gold);
+    width: 42px;
+    height: 42px;
+    border-radius: 60px;
+    padding: 16px;
+    gap: 10px;
+    border: none;
+    display: flex;
+    background-image: url("./icones/carrinho.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.item .favoritar{
+    background-color: #D3D0D0;
+    width: 35px;
+    height: 31px;
+    border-radius: 60px;
+    padding: 6px;
+    gap: 10px;
+    border: none;
+    display: flex;
+    background-image: url("./icones/coracao.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    float: inline-end;
+    margin: 15px;
+}
+
+#todos-produtos{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 10px;
+
+    position: absolute;
+    width: 1224px;
+    height: 598px;
+    left: 339px;
+    top: 858px;
 }
