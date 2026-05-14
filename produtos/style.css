@@ -1,225 +1,472 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* 
     Para utilizar a fonte Playfair
     font-family: "Playfair";
 */
 
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
-:root{
-    --primary: #f5f5f5;
-    --secondary: #1c1c1c;
-    --gold: #C8A96A;
-    --gray: #A6A6A6;
+:root {
+  --primary: #f5f5f5;
+  --secondary: #1c1c1c;
+  --gold: #c8a96a;
+  --gray: #a6a6a6;
 
-    /* Para utilizar variaveis, substitua o valor da cor para var. Exemplo: color: var(--gold) */
+  /* Para utilizar variaveis, substitua o valor da cor para var. Exemplo: color: var(--gold) */
 }
 
-html{
-    width: 100vw;
-    height: 100vh;
+html {
+  width: 100vw;
+  height: 100vh;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  overflow-y: auto;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--secondary);
+  z-index: 10;
+}
+header .content {
+  width: 100%;
+  max-width: 1224px;
+  padding: 0 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .content .logo {
+  object-fit: contain;
+  width: 80px;
+}
+
+header .content ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 1rem;
+}
+header .content ul li a {
+  font-family: "Playfair";
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+header .content ul li #atual {
+  color: var(--gold);
+}
+
+header .content ul li a:hover {
+  color: var(--gold);
+}
+header .content ul li a svg {
+  fill: var(--primary);
+}
+header .content ul li a:hover svg {
+  fill: var(--gold) !important;
+}
+
+@keyframes initHero{
+    0%{
+        margin-top: -150%;
+    }
+    100%{
+        margin-top: 0;
+    }
+}
+
+#produtos-destaques {
+  display: flex;
+  width: 100vw;
+  min-height: calc(100vh - 80px);
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+}
+
+#produtos-destaques .content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 1224px;
+  animation: initHero 1s ease-in-out;
+}
+
+.titulo {
+  font-family: "Playfair", serif;
+  font-weight: 500;
+  font-style: medium;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: var(--secondary);
+
+  width: 1200px;
+  height: 64px;
+
+  text-align: center;
+}
+
+.titulo span {
+  color: var(--gold);
+}
+
+#produtos-destaques .content .produtos {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.item {
+  width: 350px;
+  height: 480px;
+  border-radius: 12px;
+  gap: 10px;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 4px 4px #a6a6a6;
+  cursor: pointer;
+  transition: 300ms;
+}
+.item:hover{
+    transform: scale(0.9);
+}
+
+
+.item .item-imagem {
+  width: 100%;
+  height: 330px;
+  /* background-image: url('quadro_pink_floyd.png'); */
+}
+
+.item .item-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.item .item-descricao {
+  width: 350px;
+  height: 66px;
+  padding: 12px;
+  gap: 10px;
+}
+
+.item .item-descricao p {
+  font-family: "Playfair", serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.item .item-opcoes {
+  padding-top: 10px;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item .item-opcoes .preco {
+  color: var(--gold);
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: regular;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.item .item-opcoes .carrinho {
+  background-color: var(--gold);
+  width: 42px;
+  height: 42px;
+  border-radius: 60px;
+  gap: 10px;
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.item .item-opcoes .carrinho:hover {
+  background-color: var(--secondary);
+}
+
+.item .item-opcoes .carrinho:hover svg {
+  fill: var(--gold);
+}
+
+.item .item-opcoes .carrinho svg {
+  fill: var(--secondary);
+}
+
+.item .favoritar {
+  background-color: #d3d0d0;
+  width: 35px;
+  height: 31px;
+  border-radius: 60px;
+  padding: 6px;
+  display: flex;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.item .favoritar svg {
+  fill: #000;
+}
+.item .favoritar:hover {
+  background-color: #000;
+}
+.item .favoritar:hover svg {
+  fill: #d3d0d0;
+}
+
+#todos-produtos {
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 0;
+}
+
+#todos-produtos .content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 1224px;
+  padding: 0 12px;
+}
+
+#todos-produtos .content .produtos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 65px;
+  row-gap: 16px;
+  justify-content: space-between;
+  width: 100%;
+  place-items: anchor-center;
+  padding: 6px 0;
+}
+
+#todos-produtos .content .search-container{
+    display: flex;
+    justify-content: end;
+}
+
+#todos-produtos .content .search-container .field{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #A6A6A6;
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    padding: 4px 12px;
+    height: 42px;
+    gap: 10px;
+}
+
+#todos-produtos .content .search-container .field input{
+    width: 100%;
+    height: 100%;
+    color: var(--secondary);
+    background: transparent;
+    border: none;
+    outline: none;
     font-size: 16px;
-    font-family: "Roboto", sans-serif;
 }
 
-body{
-    background-color: var(--primary);
+#todos-produtos .content .search-container .field input::placeholder{
+    color: var(--secondary);
+    font-size: 16px;
 }
 
-header{
+#todos-produtos .content .search-container .field svg{
+    cursor: pointer;
+    fill: var(--secondary);
+    transition: 300ms;
+}
+
+#todos-produtos .content .search-container .field svg:hover{
+    fill: var(--gold);
+}
+
+#todos-produtos .content .pagination{
     display: flex;
     justify-content: center;
-    position: fixed;
-    height: 80px;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: var(--secondary);
-    z-index: 10;
-}
-header .content{
-    width: 100%;
-    max-width: 1224px;
-    padding: 0 12px;
-    display: flex;
-    justify-content: space-between;
-}
-
-header .content .logo{
-    object-fit: contain;
-    width: 80px;
-}
-
-header .content ul{
-    display: flex;
-    list-style: none;
     align-items: center;
-    gap: 1rem;
+    width: 100%;
+    gap: 24px;
 }
-header .content ul li a{
+
+#todos-produtos .content .pagination .botao{
+    border: 1px solid #f5f5f5;
+    width: 46px;
+    height: 46px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 300ms;
     font-family: "Playfair";
-    text-decoration: none;
+    font-size: 32px;
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+#todos-produtos .content .pagination .botao.active{
+    border: 1px solid var(--gold);
+    background-color: var(--gold);
     color: var(--primary);
-    font-size: 24px;
+}
+
+#todos-produtos .content .pagination .botao:hover{
+    border: 1px solid var(--gold);
+    background-color: var(--gold);
+    color: var(--primary);
+}
+
+footer{
+    width: 100vw;
+    background-color: var(--secondary);
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 8px;
-}
-header .content ul li #atual{
-    color: var(--gold);
+    flex-direction: column;
+    padding: 64px 0;
 }
 
-header .content ul li a:hover{
-    color: var(--gold);
-}
-header .content ul li a svg{
-    fill: var(--primary);
-}
-header .content ul li a:hover svg{
-    fill: var(--gold) !important;
+footer .content{
+    width: 1224px;
+    padding: 0 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
 }
 
-#produtos-destaques{
+footer .content .wrapper{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 12px;
-    gap: 10px;
-
-    position: absolute;
-    width: 1224px;
-    height: 598px;
-    left: 339px;
-    top: 170px;
+    gap: 12px;
+    padding: 26px 0px 40px 0px;
 }
 
-.titulo{
-    font-family: "Playfair", serif;
-    font-weight: 500;
-    font-style: medium;
-    font-size: 48px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    text-align: center;
-    color: var(--secondary);
-
-    width: 1200px;
-    height: 64px;
-
-    text-align: center;
+footer .content #w1 img{
+    width: 80px;
+    object-fit: contain;
 }
 
-.titulo span{
-    color: var(--gold);
+footer .content #w1 .description{
+    color: var(--gray);
+    font-size: 14;
 }
 
-.produtos{
+footer .content #w1 .socials{
     display: flex;
-    width: 1200px;
-    height: 500px;
-    justify-content: space-between;
-    padding: 10px;
+    gap: 12px;
 }
 
-.item{
-    flex-flow: vertical;
-    width: 350px;
-    height: 480px;
-    border-radius: 12px;
-    gap: 10px;
-    background-color: #ffffff;
-}
-
-.item .item-imagem{
-    width: 350px;
-    height: 330px;
-    background-image: url('quadro_pink_floyd.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 10px auto;
-}
-
-.item .item-descricao{
-    width: 350px;
-    height: 66px;
-    padding: 12px;
-    gap: 10px;
-}
-
-.item .item-descricao p{
-    font-family: "Playfair", serif;
-    font-weight: 500;
-    font-style: medium;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0%;
-}
-
-.item .item-opcoes{
-    padding-top: 10px;
-    padding-right: 12px;
-    padding-bottom: 10px;
-    padding-left: 12px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.item .item-opcoes .preco{
-    color: var(--gold);
-    font-family: "Roboto";
-    font-weight: 400;
-    font-style: regular;
-    font-size: 32px;
-    line-height: 100%;
-    letter-spacing: 0%;
-}
-
-.item .item-opcoes .carrinho{
-    background-color: var(--gold);
+footer .content #w1 .socials a{
     width: 42px;
     height: 42px;
     border-radius: 60px;
-    padding: 16px;
-    gap: 10px;
-    border: none;
+    background-color: var(--gold);
     display: flex;
-    background-image: url("./icones/carrinho.png");
-    background-repeat: no-repeat;
-    background-position: center;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms;
+    border: 1px solid var(--gold);
+    padding: 2px;
 }
 
-.item .favoritar{
-    background-color: #D3D0D0;
-    width: 35px;
-    height: 31px;
-    border-radius: 60px;
-    padding: 6px;
-    gap: 10px;
-    border: none;
-    display: flex;
-    background-image: url("./icones/coracao.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    float: inline-end;
-    margin: 15px;
+footer .content #w1 .socials a svg{
+    fill: var(--secondary)
 }
 
-#todos-produtos{
+footer .content #w1 .socials a:hover{
+    background-color: var(--secondary);
+}
+
+footer .content #w1 .socials a:hover svg{
+    fill: var(--gold)
+}
+
+footer .content #w2 .title, footer .content #w3 .title{
+    font-family: "Playfair";
+    font-size: 20px;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+footer .content #w2 ul, footer .content #w3 ul{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 12px;
-    gap: 10px;
+    gap: 8px;
+}
 
-    position: absolute;
-    width: 1224px;
-    height: 598px;
-    left: 339px;
-    top: 858px;
+footer .content #w2 li a{
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 16px;
+    font-weight: 600;
+    transition: 300ms;
+}
+
+footer .content #w3 li a{
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 16px;
+    font-weight: 400;
+    transition: 300ms;
+}
+
+footer .content #w2 li a:hover, footer .content #w3 li a:hover{
+    color: var(--gold);
+}
+
+footer .line{
+    display: flex;
+    width: 1200px;
+    margin: auto;
+    height: 1px;
+    background-color: var(--gray);
+    border-radius: 16px;
+}
+
+footer .coopyright{
+    margin-top: 10px;
+    color: var(--gray);
+    font-size: 16px;
 }

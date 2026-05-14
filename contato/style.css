@@ -127,7 +127,6 @@ span{
 }
 
 .formulario{
-    height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -245,7 +244,7 @@ span{
 }
 
 .foto-galeria{
-    min-height: 430px;
+    height: 598px;
     background-image: url('galeria.jpg');
     background-size: cover;
     background-position: center;
@@ -267,6 +266,7 @@ span{
 .caixa-form{
     padding: 45px;
     background-color: #F5F5F5;
+    height: 598px;
 }
 
 form{
