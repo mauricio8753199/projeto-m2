@@ -27,3 +27,84 @@ html{
     font-size: 16px;
     font-family: "Roboto", sans-serif;
 }
+
+body{
+    background-color: var(--primary);
+}
+
+
+#produtos-destaques{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 10px;
+
+    position: absolute;
+    width: 1224px;
+    height: 598px;
+    left: 339px;
+    top: 170px;
+}
+
+.titulo{
+    font-family: "Playfair", serif;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: var(--secondary);
+
+    width: 1200px;
+    height: 64px;
+
+    text-align: center;
+}
+
+.titulo span{
+    color: var(--gold);
+}
+
+.produtos{
+    display: flex;
+    width: 1200px;
+    height: 500px;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.item{
+    flex-flow: vertical;
+    width: 350px;
+    height: 480px;
+    border-radius: 12px;
+    gap: 10px;
+    background-color: #ffffff;
+}
+
+.item .item-imagem{
+    width: 350px;
+    height: 330px;
+    background-image: url('quadro_pink_floyd.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 10px auto;
+}
+
+.item .item-descricao{
+    width: 350px;
+    height: 66px;
+    padding: 12px;
+    gap: 10px;
+}
+
+.item .item-descricao p{
+    font-family: "Playfair", serif;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
