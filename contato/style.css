@@ -1,15 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-/* 
-    Para utilizar a fonte Playfair
-    font-family: "Playfair";
-*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair:opsz,wght@5..1200,300..900&family=Roboto:wght@100..900&display=swap');
 
 *{
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 :root{
@@ -17,63 +11,181 @@
     --secondary: #1c1c1c;
     --gold: #C8A96A;
     --gray: #A6A6A6;
-
-    /* Para utilizar variaveis, substitua o valor da cor para var. Exemplo: color: var(--gold) */
-}
-
-h1{
-    font-family: "Playfair";
-    text-align: center;
-    font-size: 96px;
-}
-h1 span{
-    color: var(--gold);
-}
-
-p{
-    font-size: 20px;    
-    color: var(--primary);
-    font-family: "Roboto";
-    color: var(--gray);
-}
-
-.hero{
-    background-color: var(--secondary);
-    background-image: url('herobg.jpg');
-    background-size: cover;
-    background-blend-mode: overlay;
-    color: var(--primary);
-    padding: 300px 20px;
-}
-
-.botao{
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: var(--gold);
-    color: black;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: "Playfair";
-    cursor: pointer;
-}
-
-p{
-    text-align: center;
-}
-
-.canais{
-    background-color: var(--primary);
-    background-image: url('canais.jpg');
-    background-repeat: no-repeat;
-    background-blend-mode: overlay;
-    padding: 300px 20px;
 }
 
 html{
-    width: 100vw;
-    height: 100vh;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
+}
+
+body{
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+a{
+    color: var(--gold);
+    text-decoration: none;
+}
+
+span{
+    color: var(--gold);
+}
+
+.hero{
+    min-height: 520px;
+    padding: 200px 20px;
+    background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('herobg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--primary);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero h1{
+    font-family: "Playfair";
+    font-size: 72px;
+    font-weight: 500;
+}
+
+.hero p{
+    max-width: 460px;
+    font-size: 20px;
+    color: var(--gray);
+}
+
+.botao{
+    padding: 12px 32px;
+    background-color: var(--gold);
+    color: var(--secondary);
+    border: none;
+    border-radius: 8px;
+    font-family: "Roboto";
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.canais,
+.formulario{
+    padding: 100px 20px;
+    background-color: var(--primary);
+}
+
+.conteudo{
+    max-width: 1050px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+
+.card-contato,
+.mapa,
+.foto-galeria,
+.caixa-form{
+    width: 50%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-contato,
+.caixa-form{
+    background-color: white;
+}
+
+.card-topo{
+    height: 180px;
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('canais.jpg');
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-topo h2,
+.caixa-form h2{
+    font-family: "Playfair";
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.card-topo h2{
+    color: var(--primary);
+}
+
+.card-info{
+    padding: 40px;
+}
+
+.card-info p{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    color: var(--gold);
+}
+
+.card-info p img{
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.redes{
+    display: flex;
+    gap: 18px;
+}
+
+.redes img{
+    width: 34px;
+    height: 34px;
+}
+
+.mapa iframe{
+    width: 100%;
+    height: 100%;
+    min-height: 390px;
+    border: 0;
+}
+
+.foto-galeria{
+    min-height: 430px;
+    background-image: url('galeria.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.caixa-form{
+    padding: 45px;
+}
+
+form{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+input,
+textarea{
+    width: 100%;
+    max-width: 360px;
+    padding: 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    font-family: "Roboto";
+}
+
+textarea{
+    height: 130px;
+    resize: none;
 }
